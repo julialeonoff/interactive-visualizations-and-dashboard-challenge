@@ -1,6 +1,6 @@
 // Read in JSON data for the Demographic Info Panel
 function buildPanel(sample) {
-    d3.json("/../data/samples.json").then((incomingData) => {
+    d3.json("../data/samples.json").then((incomingData) => {
         var panel = d3.select("#sample-metadata");
         panel.html("");
 
@@ -18,7 +18,7 @@ function buildPanel(sample) {
 
 // Function to build charts
 function buildCharts(sample) {
-    d3.json("/../data/samples.json").then((incomingData) => {
+    d3.json("../data/samples.json").then((incomingData) => {
         
         // Create variables for the data
         var samples = incomingData.samples.filter(d => d.id.toString() === sample)[0];
@@ -81,7 +81,7 @@ function optionChanged(sample) {
 function init() {
     var dropdown = d3.select("#selDataset");
 
-    d3.json("/../data/samples.json").then((incomingData) => {
+    d3.json("../data/samples.json").then((incomingData) => {
         var names = incomingData.names;
         names.forEach(function(name) {
             dropdown.append("option").text(name).property("value");
